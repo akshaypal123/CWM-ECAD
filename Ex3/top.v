@@ -43,4 +43,5 @@ module counter(
 			else 
 				counter_out <= counter_out;
     
+
 endmodule
