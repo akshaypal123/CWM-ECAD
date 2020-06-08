@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Test bench for Exercise #3 - Up/Down counter
-// Student Name:
-// Date: 
+// Student Name: Akshay Pal
+// Date: 8th June 2020
 //
 // Description: A testbench module to test Ex3 - counter
 // Guidance: start with simple tests of the module (how should it react to each 
@@ -13,9 +13,15 @@
 module top_tb(
     );
     
-//Todo: Parameters
+//Parameters
+parameter CLK_PERIOD = 10;
 
-//Todo: Regitsers and wires
+//Registers and wires
+reg clk;
+reg rst; 
+reg enable;
+reg direction;
+reg err;
 
 //Todo: Clock generation
 
