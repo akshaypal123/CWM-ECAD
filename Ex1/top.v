@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Exercise #1 
-// Student Name:
-// Date: 
+// Student Name: Akshay Pal
+// Date: 8th June 2020
 //
 //  Description: In this exercise, you need to design a logical unit, where the  
 //  output acts according to the following truth table:
@@ -29,8 +29,9 @@ module logicalunit(
     output out
     );
     
-    wire   out;
-         
+    wire   out;    
       //Todo: add you logic here
+	assign index = a+a+b;
+	assign out = func[index];
 
 endmodule
