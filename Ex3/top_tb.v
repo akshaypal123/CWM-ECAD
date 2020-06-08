@@ -22,13 +22,64 @@ reg rst;
 reg enable;
 reg direction;
 reg err;
+wire [7:0] counter_out;
 
-//Todo: Clock generation
+//Clock generation
+initial 
+begin 
+	clk = 1'b0;
+	forever
+		#(CLK_PERIOD/2) clk = ~clk;
+end 
+ 
+//User logic
+initial begin
+	rst = 1;
+	enable = 1;
+	direction = 1;
+	err = 0; 
+	forever begin
+		#1
+		rst = 0; 
+		#10
+		if (counter_out != 1)
+			begin
+				$display("***TEST FAILED! Counter did not increment. counter_out=%d ***", counter_out);
+				err = 1;
+			end
+		enable = 0;
+		#10
+		if (counter_out != 1)
+			begin
+				$display("***TEST FAILED! Enable not working. counter_out=%d ***", counter_out);
+				err = 1;
+			end
+		enable = 1;
+		direction = 0;
+		#10
+		if (counter_out != 0)
+			begin
+				$display("***TEST FAILED! Counter did not decrement. counter_out=%d ***", counter_out);
+				err = 1;
+			end
+	end
+end
+	
+//Finish test, check for success
+initial begin
+	#50
+	if (err == 0)
+		$display("***TEST PASSED! :) ***");
+	$finish;
+end
 
-//Todo: User logic
-    
-//Todo: Finish test, check for success
-
-//Todo: Instantiate counter module
+//Instantiate counter module
+counter top (
+	.clk (clk),
+	.rst (rst),
+	.enable (enable),
+	.direction (direction),
+	.counter_out (counter_out)
+);
  
 endmodule 
