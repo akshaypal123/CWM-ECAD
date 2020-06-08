@@ -9,7 +9,6 @@ module top_tb(
    //No ports are defined! 
    );
 
-   
     //Parameters    
     parameter CLK_PERIOD = 10;
 
