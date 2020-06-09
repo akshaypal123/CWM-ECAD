@@ -31,7 +31,6 @@ module logicalunit(
     
     wire   out;    
       //Todo: add you logic here
-	assign index = a+a+b;
-	assign out = func[index];
+	assign out = func[{a,b}];
 
 endmodule
