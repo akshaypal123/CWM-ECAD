@@ -63,7 +63,7 @@ module top_tb (
 		.clk (clk),
 		.rst (rst),
 		.button (button),
-		.throw (throw),
+		.throw (throw)
 	);
  
 endmodule
