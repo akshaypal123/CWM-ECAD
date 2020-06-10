@@ -51,7 +51,7 @@ module multiplexer (
 		);
 
 	// Instantiate Multiplexer
-	mux multiplexer (
+	mux mux (
 		.a (throw[2:0]),
 		.b ({red, amber, green}),
 		.sel (sel),
