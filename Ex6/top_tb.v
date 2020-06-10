@@ -58,7 +58,6 @@ module top_tb (
 		.result (result[2:0])
 		);
 endmodule
-endmodule
 	
 
 
