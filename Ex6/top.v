@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Exercise #6 
-// Student Name:
-// Date: 
+// Student Name: Akshay Pal
+// Date: 10th June 2020
 //
 //
 //  Description: In this exercise, you need to design a multiplexer between a dice and traffic 
@@ -19,4 +19,12 @@
 //           result[2:0]
 //
 //////////////////////////////////////////////////////////////////////////////////
+`timescale 1ns / 100ps
+
+module multiplexer (
+	input rst,
+	input clk,
+	input button,
+	input sel,
+	output wire [2:0] result
 
