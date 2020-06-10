@@ -27,4 +27,36 @@ module multiplexer (
 	input button,
 	input sel,
 	output wire [2:0] result
+	);
+
+	// Registers and wires
+	wire red;
+	wire amber;
+	wire green;
+	wire [2:0] throw;
+
+	// Instantiate Dice Module 
+	electronic_dice dice (
+		.clk (clk),
+		.rst (rst),
+		.button (button),
+		.throw (throw [2:0])
+		);
+	// Instantiate Traffic Lights
+	lights lights (
+		.clk (clk),
+		.red (red),
+		.amber (amber),
+		.green (green)
+		);
+
+	// Instantiate Multiplexer
+	mux multiplexer (
+		.a (throw[2:0]),
+		.b ({red, amber, green}),
+		.sel (sel),
+		.out (result [2:0])
+		);
+
+endmodule
 
