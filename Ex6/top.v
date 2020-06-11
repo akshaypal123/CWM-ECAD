@@ -36,7 +36,7 @@ module multiplexer (
 	wire [2:0] throw;
 
 	// Instantiate Dice Module 
-	electronic_dice dice (
+	electronic_dice electronic_dice (
 		.clk (clk),
 		.rst (rst),
 		.button (button),
