@@ -30,7 +30,9 @@ module top_tb (
 	end 
 
 	// Tests
-
+	initial begin
+		err = 0;
+		enable = 1;
 
 
 
